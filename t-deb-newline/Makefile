@@ -4,7 +4,7 @@ build-hook:
 	touch "$$(printf "pkg-newline/file\nnewline")"
 
 clean-hook:
-	rm "$$(printf "pkg-newline/file\nnewline")"
+	rm -f "$$(printf "pkg-newline/file\nnewline")"
 
 test-case:
 	# cannot create package with newline

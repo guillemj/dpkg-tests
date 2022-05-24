@@ -13,9 +13,9 @@ build-hook:
 
 clean-hook:
 	$(RM) pkg-dir-conffile-1/test-path/test-subpath
-	rmdir pkg-dir-conffile-1/test-path
+	rmdir pkg-dir-conffile-1/test-path || true
 	$(RM) pkg-dir-symlink-ext-1/test-path/test-subpath
-	rmdir pkg-dir-symlink-ext-1/test-path
+	rmdir pkg-dir-symlink-ext-1/test-path || true
 
 test-case:
 	# Cannot switch a directory containing conffiles
