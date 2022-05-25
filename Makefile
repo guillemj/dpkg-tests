@@ -112,7 +112,15 @@ TESTS_PASS += t-conffile-replaces-existing
 TESTS_PASS += t-conffile-replaces-existing-and-upgrade
 TESTS_PASS += t-conffile-replaces-disappear
 ifdef DPKG_CAN_REPLACE_DIVERTED_CONFFILE
+ifdef DPKG_HAS_WORKING_ROOTDIR_DIVERSIONS
+TESTS_PASS_CONFFILE_REPLACES_DIVERTED = yes
+endif
+ifdef DPKG_AS_ROOT
+TESTS_PASS_CONFFILE_REPLACES_DIVERTED = yes
+endif
+ifdef TESTS_PASS_CONFFILE_REPLACES_DIVERTED
 TESTS_PASS += t-conffile-replaces-diverted
+endif
 endif
 TESTS_PASS += t-conffile-versioned-replaces-downgrade
 ifdef DPKG_HAS_WORKING_ROOTDIR_MAINTSCRIPT_HELPER
