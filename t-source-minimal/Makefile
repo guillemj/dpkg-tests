@@ -3,7 +3,7 @@ include ../Test.mk
 D := pkg-minimal_1.0
 
 test-case:
-	cd $(D); $(DPKG_BUILD_PKG) --build=full
+	cd $(D); $(DPKG_BUILD_PKG) -F
 
 test-clean:
 	cd $(D); debian/rules clean
