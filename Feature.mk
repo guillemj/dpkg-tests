@@ -33,6 +33,7 @@ endif
 # dpkg >= 1.18.x
 ifeq ($(call CHECK_VERSION,$(DPKG_SERIES),ge,1.18.x),yes)
 $(info Assuming checks for dpkg >= 1.18.x)
+export DPKG_BUILD_HAS_CHECK_COMMAND ?= 1
 export DPKG_HAS_TRIGPROC_DEPCHECK ?= 1
 export DPKG_HAS_SAME_RUN_BIDIRECTIONAL_CONFLICTS ?= 1
 export DPKG_HAS_WORKING_TRIGGERS_PENDING_UPGRADE ?= 1
